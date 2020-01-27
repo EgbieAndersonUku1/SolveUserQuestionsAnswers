@@ -43,15 +43,15 @@ Bootstrap
 Sqlite3
 
 ## Test users on the system to play with:
-##Admin user
+Admin user
 Login name is Admin
 Password is admin1234
 
-##Expert user
+Expert user
 Login: expertuser
 password: expert1234
 
-##Regular user
+Regular user
 Login: sam
 password: 12345678
 
