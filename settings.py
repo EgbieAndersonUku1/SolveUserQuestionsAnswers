@@ -1,1 +1,1 @@
-SECRET_KEY = "This is a super secret key"
+SECRET_KEY = "Gsdqx-F1wcO9gPzg3cDmoQa29rNBJApw"
