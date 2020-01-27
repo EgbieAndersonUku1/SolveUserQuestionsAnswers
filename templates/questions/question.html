@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Questions and Answers Page {% endblock %}
+
+{% block body %}
+
+    <!-- Fixed navbar -->
+    {% include "navbar.html" %}
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>{{ question["question"] }}</h1>
+        <p>{{ question["answer"] }} </p>
+        <p><a class="btn btn-primary btn-lg">Asked By: {{ question["asker_name"].title() }}</a></p>
+        <p><a class="btn btn-primary btn-lg">Answered By: {{ question["expert_name"].title() }}</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+ {% endblock %}

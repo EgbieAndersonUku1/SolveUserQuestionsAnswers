@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Users and user setup {% endblock %}
+
+{% block body %}
+    <div class="container theme-showcase" role="main">
+
+        {% include "search/search.html" %}
+      <div class="page-header">
+        <h1>Users</h1>
+        <h6>Click to promote to expert or to regular user</h6>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="list-group">
+
+              <a href="#" class="list-group-item active">
+                  <h4 class="list-group-item-heading">Users</h4>
+              </a>
+              {% for user in result %}
+
+                <a href="{{ url_for('admin_app.promote', user_id=user['id'], username=user['name']) }}" class="list-group-item">
+                  {% if user["admin"] and session.username and user["expert"]  %}
+                    <h4 class="list-group-item-heading">{{ user["name"].title() }} - (Account type: Admin and Expert)</h4>
+                      {{ 'Your currently logged in' if user["logged_in"] else "Not logged in" }}
+
+                  {% elif user["admin"] and not session.username and user["expert"] %}
+                      <h4 class="list-group-item-heading">{{ user["name"].title() }} - (Account type: Admin)</h4>
+                      {{ 'Logged in' if user["logged_in"] else "Not logged in" }}
+
+                  {% elif user["admin"] and session.username and not user["expert"] %}
+                    <h4 class="list-group-item-heading">{{ user["name"].title() }} - (Account type: Admin)</h4>
+                      {{ 'Your currently logged in' if user["logged_in"] else "Not logged in" }}
+
+                  {% elif user["admin"] and not session.username and not user["expert"] %}
+                      <h4 class="list-group-item-heading">{{ user["name"].title() }} - (Account type: Admin)</h4>
+                      {{ 'Logged in' if user["logged_in"] else "Not logged in" }}
+
+                  {% elif user["expert"] %}
+                      <h4 class="list-group-item-heading active">{{ user["name"].title() }} - (Account type: Expert)</h4>
+                      {{ 'Logged in' if user["logged_in"] else "Not logged in" }}
+                  {% else %}
+                    <h4 class="list-group-item-heading">{{ user["name"].title() }} - (Account type: Regular user )</h4>
+                    {{ 'Logged in' if user["logged_in"] else "Not logged in" }}
+
+                  {% endif %}
+                </a>
+
+              {% endfor %}
+              <br>
+              {% include "flash_message.html" %}
+
+          </div>
+        </div><!-- /.col-lg-12 -->
+      </div>
+
+    </div> <!-- /container -->
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if session.admin %}
+         Admin - add user
+    {% else %}
+        Register user
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container theme-showcase" role="main">
+
+       {% include "flash_message.html" %}
+      <div class="page-header">
+        {% if session.admin %}
+            <h1>Admin</h1>
+            <hr>
+            <h3>Add new user</h3>
+        {% else %}
+            <h1>Register</h1>
+        {% endif %}
+      </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="well bs-component">
+
+              {% if session.admin %}
+                  <form class="form-horizontal" method="POST" action="{{ url_for('register_app.create_new_user') }}">
+              {% else %}
+                  <form class="form-horizontal" method="POST" action="{{ url_for('register_app.register') }}">
+                    {% endif %}
+                <fieldset>
+                  <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" name="register_name" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password (8 Characters minimum)</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="password" name="register_password" placeholder="Password"
+                             minlength="8" maxlength="20" required>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Confirm Password (8 Characters minimum)</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Confirm password.."
+                      minlength="8" maxlength="20" required>
+                    </div>
+                  </div>
+
+                  {% if session.admin %}
+                    <div class="form-group">
+                      <label for="select" class="col-lg-2 control-label">User type</label>
+                      <div class="col-lg-10">
+                        <select class="form-control" name="select_id" id="select">
+                          <option>Regular user</option>
+                          <option>Expert</option>
+                        </select>
+                      </div>
+                  </div>
+                  {% endif %}
+
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        {% if session.admin %}
+                            <button type="submit" class="btn btn-primary" onclick="return Validate()">Add user</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-primary" onclick="return Validate()">Register</button>
+                        {% endif %}
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+            <script type="text/javascript">
+                function Validate() {
+                    var password = document.getElementById("password").value;
+                    var confirmPassword = document.getElementById("confirm-password").value;
+                    if (password != confirmPassword) {
+                        alert("Passwords do not match.");
+                        return false;
+                    }
+        return true;
+    }
+</script>
+
+    </div> <!-- /container -->
+{% endblock %}
