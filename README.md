@@ -44,16 +44,16 @@ Sqlite3
 
 ## Test users on the system to play with:
 Admin user
-1. Login name is Admin
-1. Password is admin1234
+1. Login name: Admin
+1. Password: admin1234
 
 Expert user
-Login: expertuser
-password: expert1234
+1. Login: expertuser
+1. password: expert1234
 
 Regular user
-Login: sam
-password: 12345678
+1. Login: sam
+1. Password: 12345678
 
 
 
@@ -61,9 +61,9 @@ password: 12345678
 1. Create a virtual environment optional
 1. Create a **name** for your directory
 1. Go into your new directory
-1. Clone the repository by using the command git clone https://github.com/EgbieAndersonUku1/SolveUserQuestionsAnswers.git .
+1. Clone the repository by using the command git clone https://github.com/EgbieAndersonUku1/SolveUserQuestionsAnswers.git **.** The full stop at end copies all the folder and directories and sub-directories into the your chosen directory without creating the based folder.
 1. Type the command "**pip install -r requirements.txt**" (making sure you are in the root directory) this will install all the dependencies on your virtual environment
-The full stop at end copies all the folder and directories and sub-directories into the your chosen directory without creating the based folder
+
 1. Run the command ***python create_tables.py*** to create the database
 1. Run the command **python create_test_users.py** this will create two users accounts an expert and an admin account. This is especially important because it is the only way to create and admin account because whey you register a new account it will automatically be assigned as a regular account unless you go into the database and change it to one.
 1. Next run the command** flask run**
