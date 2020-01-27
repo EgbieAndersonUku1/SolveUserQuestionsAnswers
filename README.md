@@ -43,17 +43,18 @@ Bootstrap
 Sqlite3
 
 ## Test users on the system to play with:
-## Admin user
-Login Admin
-Password admin1234
+##Admin user
+Login name is Admin
+Password is admin1234
 
 ##Expert user
-Login expertuser
-password expert1234
+Login: expertuser
+password: expert1234
 
 ##Regular user
-Login sam
-password 12345678
+Login: sam
+password: 12345678
+
 
 
 ## How to run this in your local system
