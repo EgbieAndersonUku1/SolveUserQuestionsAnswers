@@ -17,9 +17,7 @@ Admin account:
   1.  See whether the account is an expert or normal user account. 
 	1. See if the user is logged in or not
 	1. Changing an existing account to either expert or regular user by clicking on the link table
-1.  When the **search** parameter is used which is only visible to the admin account the admin is able to see a lot more information regarding the user and do a lot more 
-
-Able to see:
+1.  When the **search** parameter is used which is only visible to the admin account the admin is able to see a lot more information regarding the user and do a lot more.
 	1. Username
 	1. User ID
 	1. Encrypted password
