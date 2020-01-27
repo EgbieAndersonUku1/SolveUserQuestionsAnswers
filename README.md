@@ -35,12 +35,12 @@ Regular account
 All accounts have the ability to change their passwords
 
 ## Technologies used
-Python 3.6
-Flask
-HTML
-JavaScript
-Bootstrap
-Sqlite3
+1. Python 3.6
+1. Flask
+1. HTML
+1. JavaScript
+1. Bootstrap
+1. Sqlite3
 
 ## Test users on the system to play with:
 Admin user
