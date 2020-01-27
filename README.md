@@ -6,7 +6,7 @@ The url for the app is https://lit-island-38001.herokuapp.com
 ## Project description
 The project is a website that allows a user to ask any question or questions to a series of experts once the user has been registered. Once the question has been asked the user can select an expert to direct that question to. The expert can then log into their account view the question and answer that question or questions.
 
-The account has** three main accounts** the Admin, expert and regular user account. 
+The account has ** three main accounts** the Admin, expert and regular user account. 
 
 The admin account has certain privelidges that are not available for the other three accounts.
 
@@ -44,8 +44,8 @@ Sqlite3
 
 ## Test users on the system to play with:
 Admin user
-Login name is Admin
-Password is admin1234
+1. Login name is Admin
+1. Password is admin1234
 
 Expert user
 Login: expertuser
